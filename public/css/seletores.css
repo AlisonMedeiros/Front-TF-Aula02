@@ -18,9 +18,80 @@
 
 /** CODAR SELETORES **/
 
-/* EX 1*/
-.content ul.demo>li:first-child {
+/* EX 1 - Quero que este li tenha fundo amarelo */
+.content ul.demo>li.exemplo {
     background-color: yellow;
 }
 
-/** Continue aqui **/
+/* EX 2 - Este aqui (#unico) deve ter o texto vermelho */
+#unico {
+    color: red;
+}
+
+/* EX 3 - Este com data-type="attr" deve ficar com sublinhado */
+.content ul.demo>li[data-type="attr"] {
+    text-decoration: underline;
+}
+
+/* EX 4 - Aqui quero que apenas quando tiver data-role~="user" fique com texto em itálico */
+.content ul.demo>li[data-role~="user"] {
+    font-style: italic;
+}
+
+/* EX 5 - Este é o :first-child, quero que o tamanho da fonte aumente */
+.content ul.demo>li:first-child {
+    font-size: 1.2em;
+}
+
+/* EX 6 - Este é o :last-child, quero que ele tenha uma borda azul */
+.content ul.demo>li:last-child {
+    border: 2px solid blue;
+}
+
+/* EX 7 - Este tem a classe .ativo, quero que o fundo fique cinza */
+.content ul.demo>li.ativo {
+    background-color: gray;
+}
+
+/* EX 8 - Dentro deste li tem um span, quero que apenas o span fique em negrito */
+.content ul.demo>li span {
+    font-weight: bold;
+}
+
+/* EX 9 - Este tem duas classes juntas (.especial.destaque), quero que o texto fique em MAIÚSCULAS */
+.content ul.demo>li.especial.destaque {
+    text-transform: uppercase;
+}
+
+/* EX 10 - Este tem atributo lang="pt-br", quero que o texto fique verde */
+.content ul.demo>li[lang="pt-br"] {
+    color: green;
+}
+
+/* EX 11 - Aqui o atributo title começa com "começa", quero que o texto fique em itálico */
+.content ul.demo>li[title^="começa"] {
+    font-style: italic;
+}
+
+/* EX 12 - Aqui o atributo title termina com "com", quero que o fundo fique rosa */
+.content ul.demo>li[title$="com"] {
+    background-color: pink;
+}
+
+/* ===== PARTE 2 - RESPONSIVIDADE ===== */
+
+/* Media query para telas menores que 768px */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    aside {
+        width: 100%;
+        order: 2;
+    }
+    
+    .content {
+        order: 1;
+    }
+}
